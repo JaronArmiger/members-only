@@ -1,0 +1,11 @@
+<h1>S'identifier</h1>
+
+<%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+	<%= f.label :email %>
+	<%= f.email_field :email %>
+	<br>
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+	<br>
+	<%= f.submit "S'identifier" %>
+<% end %>

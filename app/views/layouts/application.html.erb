@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <% flash.each do |msg_type, msg| %>
+      <%= content_tag(:div, msg) %>
+    <% end %>
+    <% if current_user %>
+      <h4><%= current_user.name %> est connectee</h4>
+      <%= link_to "Se Deconnecter", logout_path, method: :delete %>
+      <%= link_to "Creer un article", new_post_path %>
+    <% else %>
+      <%= link_to "S'Identifier", login_path %>
+      <%= link_to "Creer un compte", signup_path %>
+    <% end %>
+    <%= link_to "Tous les articles", posts_path %>
+    
     <%= yield %>
   </body>
 </html>

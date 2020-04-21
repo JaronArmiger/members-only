@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+	<div>
+		Le formulaire contient <%= pluralize(object.errors.count, "erreur") %>
+	</div>
+	<ul>
+		<% object.errors.full_messages.each do |err| %>
+			<li><%= err %></li>
+		<% end %>
+	</ul>
+<% end %>

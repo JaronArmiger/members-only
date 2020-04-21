@@ -1,0 +1,20 @@
+<h1>Tous les articles</h1>
+
+<% if !@posts.empty? %>
+	<ul>
+		<% @posts.each do |p| %>
+		  <li>
+		  	<%= p.content %>
+		  	<% if logged_in? %>
+		  	  <i><%= p.user.name %></i>
+		  	<% else %>
+		  	  <i>un secret</i>
+		  	<% end %>
+		  </li>
+
+		<% end %>
+	</ul>
+<% else %>
+	<p>rien :(</p>
+<% end %>
+

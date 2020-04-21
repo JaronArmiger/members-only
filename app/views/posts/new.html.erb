@@ -1,0 +1,9 @@
+<h1>Creer un article</h1>
+
+<%= form_with(model: @post, local: true) do |f| %>
+  <%= render 'layouts/error_messages', object: f.object %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+  <br>
+  <%= f.submit "creer" %>
+<% end %>
